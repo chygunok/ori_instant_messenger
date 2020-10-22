@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 // import 'package:font/fonts.dart';
 
 class AppColors {
@@ -35,13 +36,14 @@ class AppColors {
 }
 
 // class AppStyles {
-//   static final cardHeader = GoogleFonts.montserrat(
+//   static final cardHeader = GoogleFonts.balsamiq(
 //     fontSize: 18,
 //     fontWeight: FontWeight.w500,
 //   ) as TextStyle;
-
-//   static final pageHeader = GoogleFonts.montserrat(
-//     fontSize: 24,
-//     fontWeight: FontWeight.w500,
-//   ) as TextStyle;
+//   // TextStyle(
+//   //   fontSize: 18,
+//   //   fontWeight: FontWeight.w500,
+//   //   // Monserrat
+//   // );
+//   // 24 Header Page
 // }
