@@ -13,9 +13,9 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     var login = TextField(
       decoration: InputDecoration(
-        border: OutlineInputBorder(),
-        labelText: 'Логин',
-      ),
+          border: OutlineInputBorder(),
+          labelText: 'Логин',
+          hoverColor: Colors.white),
       controller: controller,
     );
 
@@ -39,9 +39,9 @@ class _LoginPageState extends State<LoginPage> {
                 child: TextField(
                   obscureText: true,
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Пароль',
-                  ),
+                      border: OutlineInputBorder(),
+                      labelText: 'Пароль',
+                      hoverColor: Colors.white),
                 ),
               ),
               Padding(
