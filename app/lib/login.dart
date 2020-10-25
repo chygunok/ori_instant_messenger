@@ -13,35 +13,38 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     var login = TextField(
       decoration: InputDecoration(
-          border: OutlineInputBorder(),
+          border: OutlineInputBorder(
+              borderSide: BorderSide(color: AppColors.mainBlack[800])),
           labelText: 'Логин',
-          hoverColor: Colors.white),
+          hoverColor: Colors.black),
       controller: controller,
     );
 
     return Scaffold(
       body: Container(
-        color: AppColors.mainBlack[800],
+        color: AppColors.mainBlack[200], // or Colors.white
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 "ORI Мессенджер",
-                style: TextStyle(color: AppColors.mainBlack[200], fontSize: 48),
+                style: TextStyle(color: AppColors.mainBlack[800], fontSize: 48),
               ),
               Padding(
                 padding: EdgeInsets.all(16),
-                child: Container(width: 500, child: login),
+                child: Container(width: 300, child: login),
               ),
               Container(
-                width: 500,
+                width: 300,
                 child: TextField(
                   obscureText: true,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(),
+                      border: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: AppColors.mainBlack[800])),
                       labelText: 'Пароль',
-                      hoverColor: Colors.white),
+                      hoverColor: Colors.black),
                 ),
               ),
               Padding(
@@ -50,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text(
                     "Войти",
                     style: TextStyle(
-                      color: AppColors.mainBlack[800],
+                      color: AppColors.mainBlack[200],
                     ),
                   ),
                   onPressed: () {
@@ -61,9 +64,9 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     );
                   },
-                  minWidth: 500,
+                  minWidth: 300,
                   height: 50,
-                  color: AppColors.mainBlack[200],
+                  color: AppColors.mainBlack[800],
                 ),
               ),
             ],
