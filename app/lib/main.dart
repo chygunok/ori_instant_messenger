@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'ORI',
+      theme: ThemeData(scaffoldBackgroundColor: Colors.white),
       home: LoginPage(),
     );
   }

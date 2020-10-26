@@ -1,6 +1,7 @@
 import 'package:app/mainMenu.dart';
 import 'package:flutter/material.dart';
 import 'package:app/theme.dart';
+import 'package:app/widgets.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -21,53 +22,84 @@ class _LoginPageState extends State<LoginPage> {
     );
 
     return Scaffold(
-      body: Container(
-        color: AppColors.mainBlack[200], // or Colors.white
+      appBar: MainAppBar(context),
+      body: SingleChildScrollView(
         child: Center(
+          // Todo: ВОТ БЫ ПОНИЖЕ СДЕЛАТЬ
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 "ORI Мессенджер",
-                style: TextStyle(color: AppColors.mainBlack[800], fontSize: 48),
-              ),
-              Padding(
-                padding: EdgeInsets.all(16),
-                child: Container(width: 300, child: login),
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 48,
+                ),
               ),
               Container(
                 width: 300,
                 child: TextField(
-                  obscureText: true,
+                  style: TextStyle(color: Colors.black),
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(color: AppColors.mainBlack[800])),
-                      labelText: 'Пароль',
-                      hoverColor: Colors.black),
+                    hintText: 'Логин',
+                    hintStyle: TextStyle(color: Colors.black),
+                    focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black)),
+                    enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black)),
+                  ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.all(16),
-                child: MaterialButton(
-                  child: Text(
-                    "Войти",
-                    style: TextStyle(
-                      color: AppColors.mainBlack[200],
-                    ),
+              Container(
+                width: 300,
+                child: TextField(
+                  style: TextStyle(color: Colors.black),
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    hintText: 'Пароль',
+                    hintStyle: TextStyle(color: Colors.black),
+                    focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black)),
+                    enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black)),
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => MainMenu(),
-                      ),
-                    );
-                  },
-                  minWidth: 300,
-                  height: 50,
-                  color: AppColors.mainBlack[800],
                 ),
+              ),
+              SizedBox(height: 10),
+              Container(
+                  child: Text("Забыл пароль?",
+                      style: TextStyle(color: Color(0xFF999999)))),
+              SizedBox(height: 10),
+              Container(
+                alignment: Alignment.center,
+                width: 300,
+                padding: EdgeInsets.symmetric(vertical: 15),
+                decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(20)),
+                child: Text("Войти", style: TextStyle(color: Colors.white)),
+              ),
+              SizedBox(height: 5),
+              Container(
+                alignment: Alignment.center,
+                width: 300,
+                padding: EdgeInsets.symmetric(vertical: 15),
+                decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(20)),
+                child: Text("Войти с помощью Google",
+                    style: TextStyle(color: Colors.white)),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Зарегестрироваться",
+                    style: TextStyle(
+                        color: Colors.black,
+                        decoration: TextDecoration.underline),
+                  )
+                ],
               ),
             ],
           ),
