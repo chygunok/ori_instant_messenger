@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:app/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:app/widgets.dart';
 
 class MainMenu extends StatefulWidget {
   @override
@@ -11,35 +12,28 @@ class _MainMenuState extends State<MainMenu>
     with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.black,
-      child: Padding(
-        padding: EdgeInsets.all(10),
-        child: Card(
-          color: Colors.white,
-          margin: EdgeInsets.zero,
-          child: Column(
-            children: [
-              Container(
-                alignment: Alignment.topLeft,
-                color: Colors.red,
+    return MaterialApp(
+        home: Scaffold(
+      appBar: MainAppBar(context),
+      drawer: Drawer(
+        child: new ListView(
+          children: <Widget>[
+            new DrawerHeader(
+              margin: EdgeInsets.zero,
+              padding: EdgeInsets.zero,
+              child: UserAccountsDrawerHeader(
+                decoration: BoxDecoration(color: Colors.black),
+                accountName: Text('Мистер Твистер'),
+                accountEmail: Text("pizdyk@sooqa.ru"),
               ),
-              Container(
-                alignment: Alignment.topRight,
-                color: Colors.blue,
-              ),
-              Container(
-                alignment: Alignment.bottomLeft,
-                color: Colors.green,
-              ),
-              Container(
-                alignment: Alignment.bottomRight,
-                color: Colors.yellow,
-              ),
-            ],
-          ),
+            ),
+            new ListTile(title: new Text("Профиль"), onTap: () {}),
+            new ListTile(title: new Text("Сообщения"), onTap: () {}),
+            new ListTile(title: new Text("Лента"), onTap: () {}),
+            new ListTile(title: new Text("Настройки"), onTap: () {})
+          ],
         ),
       ),
-    );
+    ));
   }
 }
