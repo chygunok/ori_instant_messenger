@@ -72,23 +72,29 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(height: 10),
               Container(
                 alignment: Alignment.center,
-                width: 300,
-                padding: EdgeInsets.symmetric(vertical: 15),
-                decoration: BoxDecoration(
+                child: RaisedButton(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 30, horizontal: 140),
                     color: Colors.black,
-                    borderRadius: BorderRadius.circular(20)),
-                child: Text("Войти", style: TextStyle(color: Colors.white)),
+                    textColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(30.0)),
+                    onPressed: () {},
+                    child:
+                        Text("Войти", style: TextStyle(color: Colors.white))),
               ),
               SizedBox(height: 5),
               Container(
                 alignment: Alignment.center,
-                width: 300,
-                padding: EdgeInsets.symmetric(vertical: 15),
-                decoration: BoxDecoration(
+                child: RaisedButton(
+                    padding: EdgeInsets.symmetric(vertical: 30, horizontal: 75),
                     color: Colors.black,
-                    borderRadius: BorderRadius.circular(20)),
-                child: Text("Войти с помощью Google",
-                    style: TextStyle(color: Colors.white)),
+                    textColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(30.0)),
+                    onPressed: () {},
+                    child: Text("Войти с помощью Google",
+                        style: TextStyle(color: Colors.white))),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
