@@ -79,7 +79,10 @@ class _LoginPageState extends State<LoginPage> {
                     textColor: Colors.white,
                     shape: RoundedRectangleBorder(
                         borderRadius: new BorderRadius.circular(30.0)),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => MainMenu()));
+                    },
                     child:
                         Text("Войти", style: TextStyle(color: Colors.white))),
               ),
