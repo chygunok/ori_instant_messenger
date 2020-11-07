@@ -1,5 +1,6 @@
 import 'package:app/login.dart';
 import 'package:flutter/material.dart';
+import 'package:app/mainMenu.dart';
 
 void main() {
   runApp(MyApp());
