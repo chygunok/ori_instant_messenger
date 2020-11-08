@@ -1,19 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:app/theme.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:app/widgets.dart';
+import 'package:flutter/material.dart';
 
-class MainMenu extends StatefulWidget {
-  @override
-  _MainMenuState createState() => _MainMenuState();
-}
-
-class _MainMenuState extends State<MainMenu>
-    with SingleTickerProviderStateMixin {
+class MainMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
+    Orientation deviceOrientation = MediaQuery.of(context).orientation;
+    Size screenSize = MediaQuery.of(context).size;
+    return Scaffold(
       appBar: MainAppBar(context),
       drawer: Drawer(
         child: new ListView(
@@ -34,6 +27,64 @@ class _MainMenuState extends State<MainMenu>
           ],
         ),
       ),
-    ));
+      body: Row(
+        children: [
+          Expanded(
+            flex: 2,
+            child: LayoutBuilder(
+              builder: (context, constraints) => Container(
+                color: Colors.red,
+                child: Center(
+                  child: Text(
+                    'Поставте',
+                    style: TextStyle(color: Colors.white, fontSize: 18),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            flex: 3,
+            child: Column(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    color: Colors.red,
+                    child: OrientationBuilder(
+                      builder: (context, orientation) => Center(
+                        // child: Text(
+                        //   'View 1\n\n' +
+                        //       '[MediaQuery orientation]:\n$deviceOrientation\n\n' +
+                        //       '[OrientationBuilder]:\n$orientation',
+                        //   style: TextStyle(color: Colors.white, fontSize: 18),
+                        // ),
+                        child: Text('зачет',
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 18)),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 3,
+                  child: OrientationBuilder(
+                    builder: (context, orientation) => Container(
+                      color: Colors.white,
+                      child: Center(
+                        child: Text(
+                          'пожалуйста',
+                          style: TextStyle(color: Colors.red, fontSize: 18),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
