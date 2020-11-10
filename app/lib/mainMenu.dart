@@ -1,3 +1,4 @@
+import 'package:app/login.dart';
 import 'package:app/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,14 @@ class MainMenu extends StatelessWidget {
             new ListTile(title: new Text("Профиль"), onTap: () {}),
             new ListTile(title: new Text("Сообщения"), onTap: () {}),
             new ListTile(title: new Text("Лента"), onTap: () {}),
-            new ListTile(title: new Text("Настройки"), onTap: () {})
+            new ListTile(title: new Text("Настройки"), onTap: () {}),
+            new ListTile(
+              title: new Text("Выйти"),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LoginPage()));
+              },
+            )
           ],
         ),
       ),
@@ -36,7 +44,7 @@ class MainMenu extends StatelessWidget {
                 color: Colors.red,
                 child: Center(
                   child: Text(
-                    'Поставте',
+                    'Поставьте',
                     style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
                 ),
