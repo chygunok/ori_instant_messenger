@@ -44,7 +44,7 @@ class MainMenu extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 3,
+            flex: 5,
             child: Column(
               children: [
                 Expanded(

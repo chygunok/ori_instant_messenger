@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:app/theme.dart';
 import 'package:app/widgets.dart';
 
+import 'package:url_launcher/url_launcher.dart';
+
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -20,6 +22,15 @@ class _LoginPageState extends State<LoginPage> {
           hoverColor: Colors.black),
       controller: controller,
     );
+
+    _launchURL() async {
+      const url = 'https://www.google.com/';
+      if (await canLaunch(url)) {
+        await launch(url);
+      } else {
+        throw 'Could not launch $url';
+      }
+    }
 
     return Scaffold(
       appBar: MainAppBar(context),
@@ -95,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
                     textColor: Colors.white,
                     shape: RoundedRectangleBorder(
                         borderRadius: new BorderRadius.circular(30.0)),
-                    onPressed: () {},
+                    onPressed: _launchURL,
                     child: Text("Войти с помощью Google",
                         style: TextStyle(color: Colors.white))),
               ),
