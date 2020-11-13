@@ -24,7 +24,7 @@ class _LoginPageState extends State<LoginPage> {
     );
 
     _launchURL() async {
-      const url = 'https://www.google.com/';
+      const url = 'https://myaccount.google.com/?pli=1';
       if (await canLaunch(url)) {
         await launch(url);
       } else {
@@ -78,14 +78,10 @@ class _LoginPageState extends State<LoginPage> {
               ),
               SizedBox(height: 10),
               Container(
-                  child: Text("Забыл пароль?",
-                      style: TextStyle(color: Color(0xFF999999)))),
-              SizedBox(height: 10),
-              Container(
                 alignment: Alignment.center,
                 child: RaisedButton(
                     padding:
-                        EdgeInsets.symmetric(vertical: 30, horizontal: 140),
+                        EdgeInsets.symmetric(vertical: 25, horizontal: 140),
                     color: Colors.black,
                     textColor: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -101,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
               Container(
                 alignment: Alignment.center,
                 child: RaisedButton(
-                    padding: EdgeInsets.symmetric(vertical: 30, horizontal: 75),
+                    padding: EdgeInsets.symmetric(vertical: 25, horizontal: 75),
                     color: Colors.black,
                     textColor: Colors.white,
                     shape: RoundedRectangleBorder(
