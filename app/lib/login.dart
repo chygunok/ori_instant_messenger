@@ -110,7 +110,7 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Зарегестрироваться",
+                    "Зарегистрироваться",
                     style: TextStyle(
                         color: Colors.black,
                         decoration: TextDecoration.underline),
