@@ -72,7 +72,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 decoration: BoxDecoration(
                     color: Colors.black,
                     borderRadius: BorderRadius.circular(20)),
-                child: Text("Зарегестрироваться",
+                child: Text("Зарегистрироваться",
                     style: TextStyle(color: Colors.white)),
               ),
               SizedBox(height: 5),
@@ -80,7 +80,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Зарегестрироваться",
+                    "Зарегистрироваться",
                     style: TextStyle(
                         color: Colors.black,
                         decoration: TextDecoration.underline),
