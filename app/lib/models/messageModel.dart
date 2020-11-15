@@ -19,7 +19,7 @@ class Message {
 final User currentUser = User(
   id: 0,
   name: 'Current User',
-  imageUrl: 'assets/images/greg.jpg',
+  imageUrl: 'assets/id0.jpg',
 );
 
 // USERS

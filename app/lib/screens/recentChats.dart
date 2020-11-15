@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:app/models/messageModel.dart';
-import 'package:app/chatScreens.dart';
+import 'package:app/screens/chatScreens.dart';
 
 class RecentChats extends StatelessWidget {
   @override
@@ -26,7 +26,7 @@ class RecentChats extends StatelessWidget {
                   padding:
                       EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
                   decoration: BoxDecoration(
-                    color: chat.unread ? Color(0xFFFFEFEE) : Colors.white,
+                    color: chat.unread ? Color(0xFFE9E9E9) : Colors.white,
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,

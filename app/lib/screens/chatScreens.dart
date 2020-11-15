@@ -25,7 +25,7 @@ class _ChatScreenState extends State<ChatScreen> {
               bottom: 8.0,
             ),
       padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 15.0),
-      width: MediaQuery.of(context).size.width * 0.75,
+      width: MediaQuery.of(context).size.width * 0.5,
       decoration: BoxDecoration(
         color: isMe ? Colors.black : Color(0xFFEBEBEB),
         borderRadius: isMe
@@ -45,7 +45,7 @@ class _ChatScreenState extends State<ChatScreen> {
             message.time,
             style: TextStyle(
               color: Colors.blueGrey,
-              fontSize: 16.0,
+              fontSize: 12.0,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -54,8 +54,8 @@ class _ChatScreenState extends State<ChatScreen> {
             message.text,
             style: TextStyle(
               color: isMe ? Colors.white : Color(0xFF000000),
-              fontSize: 16.0,
-              fontWeight: FontWeight.w600,
+              fontSize: 17.0,
+              fontWeight: FontWeight.w500,
             ),
           ),
         ],
@@ -73,35 +73,37 @@ class _ChatScreenState extends State<ChatScreen> {
 
   _buildMessageComposer() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 8.0),
-      height: 70.0,
-      color: Colors.white,
-      child: Row(
-        children: <Widget>[
-          IconButton(
-            icon: Icon(Icons.photo),
-            iconSize: 25.0,
-            color: Colors.black,
-            onPressed: () {},
-          ),
-          Expanded(
-            child: TextField(
-              textCapitalization: TextCapitalization.sentences,
-              onChanged: (value) {},
-              decoration: InputDecoration.collapsed(
-                hintText: 'Send a message...',
+        margin: EdgeInsets.symmetric(vertical: 1),
+        height: 70.0,
+        color: Colors.black,
+        child: Container(
+          color: Colors.white,
+          child: Row(
+            children: <Widget>[
+              IconButton(
+                icon: Icon(Icons.photo),
+                iconSize: 25.0,
+                color: Colors.black,
+                onPressed: () {},
               ),
-            ),
+              Expanded(
+                child: TextField(
+                  textCapitalization: TextCapitalization.sentences,
+                  onChanged: (value) {},
+                  decoration: InputDecoration.collapsed(
+                    hintText: 'Начните набирать сообщение',
+                  ),
+                ),
+              ),
+              IconButton(
+                icon: Icon(Icons.send),
+                iconSize: 25.0,
+                color: Colors.black,
+                onPressed: () {},
+              ),
+            ],
           ),
-          IconButton(
-            icon: Icon(Icons.send),
-            iconSize: 25.0,
-            color: Colors.black,
-            onPressed: () {},
-          ),
-        ],
-      ),
-    );
+        ));
   }
 
   @override

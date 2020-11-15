@@ -1,6 +1,6 @@
 import 'package:app/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:app/recentChats.dart';
+import 'package:app/screens/recentChats.dart';
 
 // Ограничения для виджетов объявляются в родителях.
 // Размеры (желаемые) задаются в самом виджете.
@@ -71,7 +71,7 @@ class _MainMenu extends State<MainMenu> {
                   flex: 2,
                   child: OrientationBuilder(
                     builder: (context, orientation) => Container(
-                      color: Colors.red,
+                      color: Colors.white,
                       child: Center(
                         child: Text(
                           'пожалуйста',
