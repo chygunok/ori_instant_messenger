@@ -19,25 +19,7 @@ class _MainMenu extends State<MainMenu> {
     return Scaffold(
       appBar: MainAppBar(context),
       // Hamburger
-      drawer: Drawer(
-        child: new ListView(
-          children: <Widget>[
-            new DrawerHeader(
-              margin: EdgeInsets.zero,
-              padding: EdgeInsets.zero,
-              child: UserAccountsDrawerHeader(
-                decoration: BoxDecoration(color: Colors.black),
-                accountName: Text('Мистер Твистер'),
-                accountEmail: Text("pizdyk@sooqa.ru"),
-              ),
-            ),
-            new ListTile(title: new Text("Профиль"), onTap: () {}),
-            new ListTile(title: new Text("Сообщения"), onTap: () {}),
-            new ListTile(title: new Text("Лента"), onTap: () {}),
-            new ListTile(title: new Text("Настройки"), onTap: () {})
-          ],
-        ),
-      ),
+      drawer: profile(context),
       body: Row(
         // Разметка под списов чатов и сами статичные чаты RecentChats
         children: [
@@ -68,13 +50,13 @@ class _MainMenu extends State<MainMenu> {
               children: [
                 // Тут хезе что будет, скорее всего имя человека с которым ведется диалог
                 Expanded(
-                  flex: 2,
+                  flex: 1,
                   child: OrientationBuilder(
                     builder: (context, orientation) => Container(
-                      color: Colors.white,
+                      color: Colors.red,
                       child: Center(
                         child: Text(
-                          'пожалуйста',
+                          'Диалог и текущим пользователем:',
                           style: TextStyle(color: Colors.black, fontSize: 18),
                         ),
                       ),
@@ -83,13 +65,13 @@ class _MainMenu extends State<MainMenu> {
                 ),
                 // Вот тут должны быть сообщения с другим пользователем
                 Expanded(
-                  flex: 3,
+                  flex: 10,
                   child: OrientationBuilder(
                     builder: (context, orientation) => Container(
                       color: Colors.white,
                       child: Center(
                         child: Text(
-                          'пожалуйста',
+                          'А как чат тут сделать, который в chatScreens',
                           style: TextStyle(color: Colors.red, fontSize: 18),
                         ),
                       ),
