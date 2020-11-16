@@ -1,5 +1,6 @@
 import 'package:app/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:app/screens/news.dart';
 import 'package:app/screens/recentChats.dart';
 
 // Ограничения для виджетов объявляются в родителях.
@@ -23,6 +24,7 @@ class _MainMenu extends State<MainMenu> {
       body: Row(
         // Разметка под списов чатов и сами статичные чаты RecentChats
         children: [
+          // Текущие чаты (Recent)
           Expanded(
             flex: 2,
             child: LayoutBuilder(
@@ -44,43 +46,8 @@ class _MainMenu extends State<MainMenu> {
               ),
             ),
           ),
-          Expanded(
-            flex: 4,
-            child: Column(
-              children: [
-                // Тут хезе что будет, скорее всего имя человека с которым ведется диалог
-                Expanded(
-                  flex: 1,
-                  child: OrientationBuilder(
-                    builder: (context, orientation) => Container(
-                      color: Colors.red,
-                      child: Center(
-                        child: Text(
-                          'Диалог и текущим пользователем:',
-                          style: TextStyle(color: Colors.black, fontSize: 18),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                // Вот тут должны быть сообщения с другим пользователем
-                Expanded(
-                  flex: 10,
-                  child: OrientationBuilder(
-                    builder: (context, orientation) => Container(
-                      color: Colors.white,
-                      child: Center(
-                        child: Text(
-                          'А как чат тут сделать, который в chatScreens',
-                          style: TextStyle(color: Colors.red, fontSize: 18),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
+          // Правая часть страницы = лента
+          News(),
         ],
       ),
     );

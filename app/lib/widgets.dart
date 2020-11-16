@@ -3,10 +3,7 @@ import 'package:app/screens/profile.dart';
 import 'package:app/screens/info.dart';
 
 Widget MainAppBar(BuildContext context) {
-  return AppBar(
-    backgroundColor: Colors.black,
-    title: Image.asset("assets/search.png", height: 40),
-  );
+  return AppBar(backgroundColor: Colors.black, title: Icon(Icons.add));
 }
 
 Widget profile(BuildContext context) {
