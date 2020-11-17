@@ -5,7 +5,7 @@ class Message {
   final String
       time; // Would usually be type DateTime or Firebase Timestamp in production apps
   final String text;
-  final bool unread;
+  bool unread;
 
   Message({
     this.sender,
@@ -19,44 +19,44 @@ class Message {
 final User currentUser = User(
   id: 0,
   name: 'Current User',
-  imageUrl: 'assets/images/greg.jpg',
+  imageUrl: 'assets/id0.jpg',
 );
 
 // USERS
 final User id1 = User(
   id: 1,
   name: 'Петя',
-  imageUrl: 'assets/images/greg.jpg',
+  imageUrl: 'assets/id0.jpg',
 );
 final User id2 = User(
   id: 2,
   name: 'Коля',
-  imageUrl: 'assets/images/james.jpg',
+  imageUrl: '',
 );
 final User id3 = User(
   id: 3,
   name: 'Андрей',
-  imageUrl: 'assets/images/john.jpg',
+  imageUrl: '',
 );
 final User id4 = User(
   id: 4,
   name: 'Лера',
-  imageUrl: 'assets/images/olivia.jpg',
+  imageUrl: '',
 );
 final User id5 = User(
   id: 5,
   name: 'Катя',
-  imageUrl: 'assets/images/sam.jpg',
+  imageUrl: '',
 );
 final User id6 = User(
   id: 6,
   name: 'Вадим Сергееич',
-  imageUrl: 'assets/images/sophia.jpg',
+  imageUrl: '',
 );
 final User id7 = User(
   id: 7,
   name: 'Steven',
-  imageUrl: 'assets/images/steven.jpg',
+  imageUrl: '',
 );
 
 // EXAMPLE CHATS ON HOME SCREEN
